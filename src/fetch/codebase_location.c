@@ -28,19 +28,19 @@ bool codebase_location_exists(void){
 }
 
 
-bool get_codebase_location(char **location){
+enum EXCEPTIONS _get_codebase_location(char **location){
 
     if(!codebase_location_exists()){
 
-        fprintf(stderr,"ERROR: file containing codebase location does not exist | expecting '%s'\n", CODEBASE_LOCATION_FILEPATH);
-        return false;
+        
+        return FILE_DOES_NOT_EXIST;
     }
 
     FILE *codebase_location_file = fopen(CODEBASE_LOCATION_FILEPATH, "r");
 
     if(codebase_location_file == NULL){
         fprintf(stderr, "ERROR : unable to open file %s\n", CODEBASE_LOCATION_FILEPATH);
-        return false;
+        return UNRESOVED_EXCEPTION;
     }
 
     #define BUFFER_SIZE 1024
@@ -48,13 +48,33 @@ bool get_codebase_location(char **location){
     char buffer[BUFFER_SIZE];
 
     if(fgets(buffer, BUFFER_SIZE, codebase_location_file) == NULL){
-        fprintf(stderr, "ERROR : unable to read file %s\n", CODEBASE_LOCATION_FILEPATH);
-        return false;
+        return FILE_DOES_NOT_CONTAIN_CODEBASE_LOCATION;
     }
 
     fclose(codebase_location_file);
 
     strcpy(*location,buffer);
 
-    return true;
+    return 0;
+}
+
+
+bool get_codebase_location(char **location){
+
+    enum EXCEPTIONS ret = _get_codebase_location(location);
+    switch(ret){
+        case 0: return true;
+        case FILE_DOES_NOT_EXIST: 
+            fprintf(stderr,"ERROR: file containing codebase location does not exist | expecting '%s'\n", CODEBASE_LOCATION_FILEPATH);
+            return false;
+        case FILE_DOES_NOT_CONTAIN_CODEBASE_LOCATION: 
+            fprintf(stderr, "ERROR : file %s does not contain codebase location\n", CODEBASE_LOCATION_FILEPATH);
+            return false;
+
+        case CODEBASE_LOCATION_INVALID:
+        case UNRESOVED_EXCEPTION:
+        default:
+            fprintf(stderr, "ERROR : unresolved exception\n");
+            return false;
+    }
 }
