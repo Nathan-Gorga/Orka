@@ -8,7 +8,7 @@ void interpret_flag(char flag){
             help();
             break;
         default:
-            printf(RED"ERROR : %c is not a valid flagn\n"RESET, flag);
+            printf(RED"ERROR : %c is not a valid flag\n"RESET, flag);
             break;
     }
 }
@@ -21,7 +21,7 @@ void parse_argvs(const int argc, const char *argv[]){
 
         if(shouldBeDash == '-'){
 
-            for(int j = 1; j < strlen(argv[i]) - 1; j++){
+            for(int j = 1; j < strlen(argv[i]); j++){
                 interpret_flag(argv[i][j]);
             }
         }
