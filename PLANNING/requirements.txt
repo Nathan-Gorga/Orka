@@ -1,0 +1,34 @@
+a program to organise my codebase
+
+it should be able to run in the CLI from anywhere on my machine
+
+the codebase has many different languages
+
+the codebase contains files, functions, data structures etc I've previously built
+
+the role of this program is to organise this codebase
+
+fetch include files
+
+add files to the base
+
+organise according to languages and type of code
+
+provide includes and imports to quickly solve problems
+
+
+
+REQUIREMENTS FOR THE PROGRAM TO FUNCTIONS
+
+- knowing the location of the code base
+
+- knowing what the user wants from orka
+
+- how to look for the requested info
+
+- what to return
+
+- how to handle errors
+
+- push a specific file to the codebase
+
