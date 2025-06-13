@@ -9,16 +9,16 @@
 #include <time.h>
 #include <stdbool.h>
 
-#ifdef _WIN32
+    #ifdef _WIN32
 
-#include <windows.h>
-#include <io.h>
+    #include <windows.h>
+    #include <io.h>
 
-#else
+    #else
 
-#include <unistd.h>
+    #include <unistd.h>
 
-#endif
+    #endif
 
 
 
