@@ -10,6 +10,9 @@
 
 #endif
 
+#define BUFFER_SIZE 1024
+
+
 bool file_exists(const char * filepath){
 
     #ifdef _WIN32
@@ -43,7 +46,6 @@ enum EXCEPTIONS _get_codebase_location(char **location){
         return UNRESOVED_EXCEPTION;
     }
 
-    #define BUFFER_SIZE 1024
 
     char buffer[BUFFER_SIZE];
 
@@ -62,15 +64,26 @@ enum EXCEPTIONS _get_codebase_location(char **location){
 bool get_codebase_location(char **location){
 
     enum EXCEPTIONS ret = _get_codebase_location(location);
+
     switch(ret){
 
         case 0: return true;
 
-        case FILE_DOES_NOT_EXIST://TODO : provide a fallback function 
+        case FILE_DOES_NOT_EXIST:
+        {
             fprintf(stderr,RED"ERROR: file containing codebase location does not exist | expecting '%s'\n"RESET, CODEBASE_LOCATION_FILEPATH);
-            return false;
-        
-            case FILE_DOES_NOT_CONTAIN_CODEBASE_LOCATION: //TODO : provide a fallback function
+            
+            char codebase_location[BUFFER_SIZE];
+            do{
+                printf("please provide a valid path to your codebase : ");
+                scanf("%s", codebase_location);
+            }while(set_codebase_location(codebase_location) != 0);
+            return true;
+        }
+       
+       
+       
+        case FILE_DOES_NOT_CONTAIN_CODEBASE_LOCATION: //TODO : provide a fallback function
             fprintf(stderr, RED"ERROR : file %s does not contain codebase location\n"RESET, CODEBASE_LOCATION_FILEPATH);
             return false;
 
@@ -101,7 +114,7 @@ enum EXCEPTIONS set_codebase_location(const char *location){
     
     fprintf(codebase_location_file  , "%s", location);
     
-    printf(CYAN"successfully set codebase location to %s\n"RESET, location);
+    printf(CYAN"Successfully set codebase location to %s\n"RESET, location);
     fclose(codebase_location_file);
     return 0;
 }
