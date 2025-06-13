@@ -3,7 +3,8 @@
 
 #include "../definitions.h"
 
-#define CODEBASE_LOCATION_FILEPATH "C:/Users/gorga/CodeProjects/Orka/ressources/codebase_location.txt"
+    #define CODEBASE_LOCATION_FILEPATH_NAME "codebase_location.txt"
+    #define CODEBASE_LOCATION_FILEPATH "C:/Users/gorga/CodeProjects/Orka/ressources/" CODEBASE_LOCATION_FILEPATH_NAME
 
 
 enum EXCEPTIONS {

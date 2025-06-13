@@ -10,17 +10,17 @@
 
 #endif
 
-bool codebase_location_exists(void){
+bool file_exists(char * filepath){
 
     #ifdef _WIN32
 
-    DWORD file_attributes = FILE_EXISTS_FUNC(CODEBASE_LOCATION_FILEPATH);
+    DWORD file_attributes = FILE_EXISTS_FUNC(filepath);
 
     if(file_attributes == INVALID_FILE_ATTRIBUTES) return false;
 
     #else
 
-    if(FILE_EXISTS_FUNC(CODEBASE_LOCATION_FILEPATH) == 0) return false;
+    if(FILE_EXISTS_FUNC(filepath) == 0) return false;
 
     #endif
 
@@ -30,7 +30,7 @@ bool codebase_location_exists(void){
 
 enum EXCEPTIONS _get_codebase_location(char **location){
 
-    if(!codebase_location_exists()){
+    if(!codebase_location_exists(CODEBASE_LOCATION_FILEPATH)){
 
         
         return FILE_DOES_NOT_EXIST;
@@ -63,18 +63,45 @@ bool get_codebase_location(char **location){
 
     enum EXCEPTIONS ret = _get_codebase_location(location);
     switch(ret){
+
         case 0: return true;
-        case FILE_DOES_NOT_EXIST: 
+
+        case FILE_DOES_NOT_EXIST://TODO : provide a fallback function 
             fprintf(stderr,"ERROR: file containing codebase location does not exist | expecting '%s'\n", CODEBASE_LOCATION_FILEPATH);
             return false;
-        case FILE_DOES_NOT_CONTAIN_CODEBASE_LOCATION: 
+        
+            case FILE_DOES_NOT_CONTAIN_CODEBASE_LOCATION: //TODO : provide a fallback function
             fprintf(stderr, "ERROR : file %s does not contain codebase location\n", CODEBASE_LOCATION_FILEPATH);
             return false;
 
-        case CODEBASE_LOCATION_INVALID:
-        case UNRESOVED_EXCEPTION:
+        case CODEBASE_LOCATION_INVALID: //TODO : provide a fallback function
+        
+        case UNRESOVED_EXCEPTION: //TODO : provide a fallback function
+        
         default:
-            fprintf(stderr, "ERROR : unresolved exception\n");
             return false;
     }
 }
+
+
+enum EXCEPTIONS set_codebase_location(const char *location){
+    
+    if(!file_exists(location)){
+        fprintf(stderr, "ERROR : %s does not exist\n", location);
+        return CODEBASE_LOCATION_INVALID;
+    }
+
+    FILE *codebase_location_file = fopen(CODEBASE_LOCATION_FILEPATH, "w");
+
+    if(codebase_location_file == NULL){
+        fprintf(stderr, "ERROR : unable to create file %s\n", CODEBASE_LOCATION_FILEPATH_NAME);
+        return UNRESOVED_EXCEPTION;
+    }
+
+
+    printf("successfully set codebase location to %s\n", location);
+    fprintf(codebase_location_file  , "%s", location);
+
+    return true;
+}
+
