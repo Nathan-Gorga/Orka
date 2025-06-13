@@ -10,7 +10,7 @@
 
 #endif
 
-bool file_exists(char * filepath){
+bool file_exists(const char * filepath){
 
     #ifdef _WIN32
 
@@ -30,7 +30,7 @@ bool file_exists(char * filepath){
 
 enum EXCEPTIONS _get_codebase_location(char **location){
 
-    if(!codebase_location_exists(CODEBASE_LOCATION_FILEPATH)){
+    if(!file_exists(CODEBASE_LOCATION_FILEPATH)){
 
         
         return FILE_DOES_NOT_EXIST;
@@ -102,6 +102,6 @@ enum EXCEPTIONS set_codebase_location(const char *location){
     printf("successfully set codebase location to %s\n", location);
     fprintf(codebase_location_file  , "%s", location);
 
-    return true;
+    return 0;
 }
 
