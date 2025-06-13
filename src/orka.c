@@ -1,13 +1,11 @@
 #include "./definitions.h"
 #include "./fetch/fetch.h"
+#include "./cli/cli.h"
+
 
 int main(const int argc, const char *argv[]) {
 
-    char *codebase_location;
-    if(!get_codebase_location(&codebase_location) != 0){
-        fprintf(stderr,RED"Terminating ORKA\n"RESET);
-        return 1;
-    }
-    printf(codebase_location);
+    parse_argvs(argc, argv);
+
     return 0;
 }
