@@ -3,6 +3,10 @@
 
 #include "../definitions.h"
 
-bool file_exists(void);
+#define CODEBASE_LOCATION_FILEPATH "C:/Users/gorga/CodeProjects/Orka/ressources/codebase_location.txt"
+
+bool codebase_location_exists(void);
+
+bool get_codebase_location(char **location);
 
 #endif

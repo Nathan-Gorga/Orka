@@ -1,7 +1,5 @@
 #include "fetch.h"
 
-#define CODEBASE_LOCATION_FILEPATH "C:/Users/gorga/CodeProjects/Orka/ressources/codebase_location.txt"
-
 #ifdef _WIN32
 
 #define FILE_EXISTS_FUNC(filepath) GetFileAttributes(filepath)
@@ -12,7 +10,7 @@
 
 #endif
 
-bool file_exists(void){
+bool codebase_location_exists(void){
 
     #ifdef _WIN32
 
@@ -30,3 +28,33 @@ bool file_exists(void){
 }
 
 
+bool get_codebase_location(char **location){
+
+    if(!codebase_location_exists()){
+
+        fprintf(stderr,"ERROR: file containing codebase location does not exist | expecting '%s'\n", CODEBASE_LOCATION_FILEPATH);
+        return false;
+    }
+
+    FILE *codebase_location_file = fopen(CODEBASE_LOCATION_FILEPATH, "r");
+
+    if(codebase_location_file == NULL){
+        fprintf(stderr, "ERROR : unable to open file %s\n", CODEBASE_LOCATION_FILEPATH);
+        return false;
+    }
+
+    #define BUFFER_SIZE 1024
+
+    char buffer[BUFFER_SIZE];
+
+    if(fgets(buffer, BUFFER_SIZE, codebase_location_file) == NULL){
+        fprintf(stderr, "ERROR : unable to read file %s\n", CODEBASE_LOCATION_FILEPATH);
+        return false;
+    }
+
+    fclose(codebase_location_file);
+
+    strcpy(*location,buffer);
+
+    return true;
+}
