@@ -1,6 +1,6 @@
 #include "fetch.h"
 
-#define CODEBASE_LOCATION_FILEPATH "C:/Users/gorga/CodeProjects/Orka/ressources"
+#define CODEBASE_LOCATION_FILEPATH "C:/Users/gorga/CodeProjects/Orka/ressources/codebase_location.txt"
 
 #ifdef _WIN32
 
