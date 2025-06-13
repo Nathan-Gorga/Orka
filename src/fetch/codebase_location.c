@@ -39,7 +39,7 @@ enum EXCEPTIONS _get_codebase_location(char **location){
     FILE *codebase_location_file = fopen(CODEBASE_LOCATION_FILEPATH, "r");
 
     if(codebase_location_file == NULL){
-        fprintf(stderr, "ERROR : unable to open file %s\n", CODEBASE_LOCATION_FILEPATH);
+        fprintf(stderr, RED"ERROR : unable to open file %s\n"RESET, CODEBASE_LOCATION_FILEPATH);
         return UNRESOVED_EXCEPTION;
     }
 
@@ -67,11 +67,11 @@ bool get_codebase_location(char **location){
         case 0: return true;
 
         case FILE_DOES_NOT_EXIST://TODO : provide a fallback function 
-            fprintf(stderr,"ERROR: file containing codebase location does not exist | expecting '%s'\n", CODEBASE_LOCATION_FILEPATH);
+            fprintf(stderr,RED"ERROR: file containing codebase location does not exist | expecting '%s'\n"RESET, CODEBASE_LOCATION_FILEPATH);
             return false;
         
             case FILE_DOES_NOT_CONTAIN_CODEBASE_LOCATION: //TODO : provide a fallback function
-            fprintf(stderr, "ERROR : file %s does not contain codebase location\n", CODEBASE_LOCATION_FILEPATH);
+            fprintf(stderr, RED"ERROR : file %s does not contain codebase location\n"RESET, CODEBASE_LOCATION_FILEPATH);
             return false;
 
         case CODEBASE_LOCATION_INVALID: //TODO : provide a fallback function
@@ -87,21 +87,22 @@ bool get_codebase_location(char **location){
 enum EXCEPTIONS set_codebase_location(const char *location){
     
     if(!file_exists(location)){
-        fprintf(stderr, "ERROR : %s does not exist\n", location);
+        fprintf(stderr, RED"ERROR : %s does not exist\n"RESET, location);
         return CODEBASE_LOCATION_INVALID;
     }
 
     FILE *codebase_location_file = fopen(CODEBASE_LOCATION_FILEPATH, "w");
 
     if(codebase_location_file == NULL){
-        fprintf(stderr, "ERROR : unable to create file %s\n", CODEBASE_LOCATION_FILEPATH_NAME);
+        fprintf(stderr, RED"ERROR : unable to create file %s\n"RESET, CODEBASE_LOCATION_FILEPATH_NAME);
         return UNRESOVED_EXCEPTION;
     }
 
-
-    printf("successfully set codebase location to %s\n", location);
+    
     fprintf(codebase_location_file  , "%s", location);
-
+    
+    printf(CYAN"successfully set codebase location to %s\n"RESET, location);
+    fclose(codebase_location_file);
     return 0;
 }
 
