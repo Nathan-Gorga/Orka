@@ -1,7 +1,7 @@
 
 
-orka: orka.o fetch.o parseCLI.o flagCallFunctions.o lang.o
-	gcc orka.o fetch.o parseCLI.o flagCallFunctions.o lang.o -o orka
+orka: orka.o fetch.o parseCLI.o flagCallFunctions.o lang.o nav.o
+	gcc orka.o fetch.o parseCLI.o flagCallFunctions.o lang.o nav.o -o orka
 	make clean
 	./orka.exe
 
@@ -20,6 +20,11 @@ flagCallFunctions.o : ./cli/flagCallFunctions.c
 
 lang.o: ./lang/lang.c
 	gcc -c ./lang/lang.c -o lang.o
+
+
+nav.o: ./nav/nav.c
+	gcc -c ./nav/nav.c -o nav.o
+
 
 clean:
 	del *.o

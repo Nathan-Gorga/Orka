@@ -2,7 +2,7 @@
 #include "./fetch/fetch.h"
 #include "./cli/cli.h"
 #include "./lang/lang.h"
-
+#include "./nav/nav.h"
 
 int main(const int argc, const char *argv[]) {
 
@@ -15,7 +15,7 @@ int main(const int argc, const char *argv[]) {
         return 1;
     }
 
-    
+    listFolderContents(buffer);
 
     free(buffer);
     return 0;

@@ -3,6 +3,6 @@
 
 #include "../definitions.h"
 
-
+void listFolderContents(const char const* folderpath);
 
 #endif
