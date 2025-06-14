@@ -15,7 +15,7 @@ int main(const int argc, const char *argv[]) {
         return 1;
     }
 
-    addFolder(buffer, "Arduino");
+    
 
     free(buffer);
     return 0;
