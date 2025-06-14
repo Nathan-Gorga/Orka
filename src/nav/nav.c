@@ -24,9 +24,7 @@ void listFolderContents(const char const* folderpath){
         free(prev);
 
         printf(RESET);
-    }
-
-    
+    }    
 }
 
 
@@ -69,7 +67,27 @@ void getFolderContents(const char const* folderpath, folderContent * head){
     FindClose(hFind);
 }
 
+void help_nav(void){
+    //typing the name of the folder to navigate into it
+    //.. to move back one folder
+    //# to move back to the root codebase
+
+    printf("\n\n\t ~~ navigation commands ~~\n");
+
+    printf("("RED"type name"RESET") : select folder | ");
+    printf("("RED".."RESET") move back | ");
+    printf("("RED"#"RESET") move back to codebase folder\n");
+    
+}
 
 void start_nav(const char const* codebase_location){
     
+    printf("starting navigation in %s\n", codebase_location);
+    printf("\n"CYAN"%s : \n"RESET, codebase_location);
+    printf("\t");
+    listFolderContents(codebase_location);
+
+    help_nav();
+
+
 }

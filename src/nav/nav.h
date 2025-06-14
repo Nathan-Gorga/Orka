@@ -13,4 +13,7 @@ void listFolderContents(const char const* folderpath);
 
 void getFolderContents(const char const* folderpath, folderContent * head);
 
+void start_nav(const char const* codebase_location);
+
+
 #endif

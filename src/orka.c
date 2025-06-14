@@ -6,17 +6,17 @@
 
 int main(const int argc, const char *argv[]) {
 
-    const int bufferSize = 1024;
-    char * buffer = (char *)malloc(bufferSize * sizeof(char));
+    const size_t bufferSize= 1024;
+    char * codebase = (char *)malloc(bufferSize * sizeof(char));
 
 
-    if(!get_codebase_location(&buffer)){
+    if(!get_codebase_location(&codebase)){
         printf(RED"TERMINATING ORKA\n"RESET);
         return 1;
     }
 
-    listFolderContents(buffer);
+    start_nav(codebase);
 
-    free(buffer);
+    free(codebase);
     return 0;
 }
