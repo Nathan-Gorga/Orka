@@ -31,5 +31,9 @@ void help(void){
     printf("-- HELP PAGE --\n\n");
     printf(" -h : help - prints this help page\n\n");
     printf(" -B : modify codebase location - specify the path to your codebase, or leave empty to be prompted for it\n\n");
-    //TODO : define code base location
+}
+
+
+void modify_codebase_location(void){
+    
 }
