@@ -62,8 +62,8 @@ enum EXCEPTIONS _get_codebase_location(char **location){
 
 
 bool get_codebase_location(char **location){
-
     enum EXCEPTIONS ret = _get_codebase_location(location);
+    
 
     switch(ret){
 

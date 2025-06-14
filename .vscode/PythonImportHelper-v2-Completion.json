@@ -1,0 +1,751 @@
+[
+    {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "os.path",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os.path",
+        "description": "os.path",
+        "detail": "os.path",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "re",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "re",
+        "description": "re",
+        "detail": "re",
+        "documentation": {}
+    },
+    {
+        "label": "subprocess",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "subprocess",
+        "description": "subprocess",
+        "detail": "subprocess",
+        "documentation": {}
+    },
+    {
+        "label": "Popen",
+        "importPath": "subprocess",
+        "description": "subprocess",
+        "isExtraImport": true,
+        "detail": "subprocess",
+        "documentation": {}
+    },
+    {
+        "label": "PIPE",
+        "importPath": "subprocess",
+        "description": "subprocess",
+        "isExtraImport": true,
+        "detail": "subprocess",
+        "documentation": {}
+    },
+    {
+        "label": "Template",
+        "importPath": "string",
+        "description": "string",
+        "isExtraImport": true,
+        "detail": "string",
+        "documentation": {}
+    },
+    {
+        "label": "logging",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "logging",
+        "description": "logging",
+        "detail": "logging",
+        "documentation": {}
+    },
+    {
+        "label": "argparse",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "argparse",
+        "description": "argparse",
+        "detail": "argparse",
+        "documentation": {}
+    },
+    {
+        "label": "namedtuple",
+        "importPath": "collections",
+        "description": "collections",
+        "isExtraImport": true,
+        "detail": "collections",
+        "documentation": {}
+    },
+    {
+        "label": "json",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
+        "documentation": {}
+    },
+    {
+        "label": "time",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "time",
+        "description": "time",
+        "detail": "time",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "shutil",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "shutil",
+        "description": "shutil",
+        "detail": "shutil",
+        "documentation": {}
+    },
+    {
+        "label": "multiprocessing",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "multiprocessing",
+        "description": "multiprocessing",
+        "detail": "multiprocessing",
+        "documentation": {}
+    },
+    {
+        "label": "hashlib",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "hashlib",
+        "description": "hashlib",
+        "detail": "hashlib",
+        "documentation": {}
+    },
+    {
+        "label": "io",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "io",
+        "description": "io",
+        "detail": "io",
+        "documentation": {}
+    },
+    {
+        "label": "tarfile",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "tarfile",
+        "description": "tarfile",
+        "detail": "tarfile",
+        "documentation": {}
+    },
+    {
+        "label": "requests",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "requests",
+        "description": "requests",
+        "detail": "requests",
+        "documentation": {}
+    },
+    {
+        "label": "version",
+        "kind": 5,
+        "importPath": "vcpkg.ports.tensorflow-common.convert_lib_params_linux",
+        "description": "vcpkg.ports.tensorflow-common.convert_lib_params_linux",
+        "peekOfCode": "version = sys.argv[1]\nlib_suffix = \"\" if len(sys.argv) < 3 else sys.argv[2]\nwith open(f\"libtensorflow{lib_suffix}.a.{version}-2.params\", \"w\") as f_out:\n    parts = []\n    with open(f\"libtensorflow_framework.so.{version}-2.params\", \"r\") as f_in:\n        skip_next = False\n        for line in f_in:\n            if skip_next:\n                skip_next = False\n                continue",
+        "detail": "vcpkg.ports.tensorflow-common.convert_lib_params_linux",
+        "documentation": {}
+    },
+    {
+        "label": "lib_suffix",
+        "kind": 5,
+        "importPath": "vcpkg.ports.tensorflow-common.convert_lib_params_linux",
+        "description": "vcpkg.ports.tensorflow-common.convert_lib_params_linux",
+        "peekOfCode": "lib_suffix = \"\" if len(sys.argv) < 3 else sys.argv[2]\nwith open(f\"libtensorflow{lib_suffix}.a.{version}-2.params\", \"w\") as f_out:\n    parts = []\n    with open(f\"libtensorflow_framework.so.{version}-2.params\", \"r\") as f_in:\n        skip_next = False\n        for line in f_in:\n            if skip_next:\n                skip_next = False\n                continue\n            if line.startswith(\"-o\"):",
+        "detail": "vcpkg.ports.tensorflow-common.convert_lib_params_linux",
+        "documentation": {}
+    },
+    {
+        "label": "version",
+        "kind": 5,
+        "importPath": "vcpkg.ports.tensorflow-common.convert_lib_params_macos",
+        "description": "vcpkg.ports.tensorflow-common.convert_lib_params_macos",
+        "peekOfCode": "version = sys.argv[1]\nlib_suffix = \"\" if len(sys.argv) < 3 else sys.argv[2]\nif os.path.isfile(f\"libtensorflow_framework.{version}.dylib-2.params\"):\n    with open(f\"libtensorflow{lib_suffix}.{version}.a-2.params\", \"w\") as f_out:\n        parts = []\n        with open(f\"libtensorflow_framework.{version}.dylib-2.params\", \"r\") as f_in:\n            for line in f_in:\n                if line.startswith(\"-Wl,-force_load,\"):\n                    f_out.write(line[16:])\n                    parts.append(line[16:])",
+        "detail": "vcpkg.ports.tensorflow-common.convert_lib_params_macos",
+        "documentation": {}
+    },
+    {
+        "label": "lib_suffix",
+        "kind": 5,
+        "importPath": "vcpkg.ports.tensorflow-common.convert_lib_params_macos",
+        "description": "vcpkg.ports.tensorflow-common.convert_lib_params_macos",
+        "peekOfCode": "lib_suffix = \"\" if len(sys.argv) < 3 else sys.argv[2]\nif os.path.isfile(f\"libtensorflow_framework.{version}.dylib-2.params\"):\n    with open(f\"libtensorflow{lib_suffix}.{version}.a-2.params\", \"w\") as f_out:\n        parts = []\n        with open(f\"libtensorflow_framework.{version}.dylib-2.params\", \"r\") as f_in:\n            for line in f_in:\n                if line.startswith(\"-Wl,-force_load,\"):\n                    f_out.write(line[16:])\n                    parts.append(line[16:])\n        parts = set(parts)",
+        "detail": "vcpkg.ports.tensorflow-common.convert_lib_params_macos",
+        "documentation": {}
+    },
+    {
+        "label": "lib_suffix",
+        "kind": 5,
+        "importPath": "vcpkg.ports.tensorflow-common.convert_lib_params_windows",
+        "description": "vcpkg.ports.tensorflow-common.convert_lib_params_windows",
+        "peekOfCode": "lib_suffix = \"\" if len(sys.argv) < 2 else sys.argv[1]\nfile_no = 1\nwith open(f\"tensorflow{lib_suffix}.dll-2.params\", \"r\") as f_in:\n    lib_name = None\n    acc_size = 0\n    f_out = open(f\"tensorflow{lib_suffix}.lib-2.params-part1\", \"w\")\n    for line in f_in:\n        if line.startswith(\"/OUT:\"):\n            lib_name = line\n            line = line.replace(\".dll\", \"-part1.lib\")",
+        "detail": "vcpkg.ports.tensorflow-common.convert_lib_params_windows",
+        "documentation": {}
+    },
+    {
+        "label": "file_no",
+        "kind": 5,
+        "importPath": "vcpkg.ports.tensorflow-common.convert_lib_params_windows",
+        "description": "vcpkg.ports.tensorflow-common.convert_lib_params_windows",
+        "peekOfCode": "file_no = 1\nwith open(f\"tensorflow{lib_suffix}.dll-2.params\", \"r\") as f_in:\n    lib_name = None\n    acc_size = 0\n    f_out = open(f\"tensorflow{lib_suffix}.lib-2.params-part1\", \"w\")\n    for line in f_in:\n        if line.startswith(\"/OUT:\"):\n            lib_name = line\n            line = line.replace(\".dll\", \"-part1.lib\")\n            f_out.write(line)",
+        "detail": "vcpkg.ports.tensorflow-common.convert_lib_params_windows",
+        "documentation": {}
+    },
+    {
+        "label": "params_path",
+        "kind": 5,
+        "importPath": "vcpkg.ports.tensorflow-common.generate_static_link_cmd_linux",
+        "description": "vcpkg.ports.tensorflow-common.generate_static_link_cmd_linux",
+        "peekOfCode": "params_path = sys.argv[2]\nversion = sys.argv[3]\nlib_suffix = \"\" if len(sys.argv) < 5 else sys.argv[4]\nwith open(sys.argv[1], \"r\") as f_in:\n    with open(\"static_link.sh\", \"w\") as f_out:\n        p_cd = re.compile(r\"^\\((cd .*) && \\\\$\")\n        p_linker = re.compile(fr\"^\\s*(.+)gcc.+(@bazel-out\\S+libtensorflow{lib_suffix}\\.so\\.\\d+\\.\\d+\\.\\d+-2\\.params).*\")\n        f_out.write(\"#!/bin/bash\\n# note: ar/binutils version 2.27 required to support output files > 4GB\\n\")\n        env = []\n        for line in f_in:",
+        "detail": "vcpkg.ports.tensorflow-common.generate_static_link_cmd_linux",
+        "documentation": {}
+    },
+    {
+        "label": "version",
+        "kind": 5,
+        "importPath": "vcpkg.ports.tensorflow-common.generate_static_link_cmd_linux",
+        "description": "vcpkg.ports.tensorflow-common.generate_static_link_cmd_linux",
+        "peekOfCode": "version = sys.argv[3]\nlib_suffix = \"\" if len(sys.argv) < 5 else sys.argv[4]\nwith open(sys.argv[1], \"r\") as f_in:\n    with open(\"static_link.sh\", \"w\") as f_out:\n        p_cd = re.compile(r\"^\\((cd .*) && \\\\$\")\n        p_linker = re.compile(fr\"^\\s*(.+)gcc.+(@bazel-out\\S+libtensorflow{lib_suffix}\\.so\\.\\d+\\.\\d+\\.\\d+-2\\.params).*\")\n        f_out.write(\"#!/bin/bash\\n# note: ar/binutils version 2.27 required to support output files > 4GB\\n\")\n        env = []\n        for line in f_in:\n            if line.startswith(\"(cd\"):",
+        "detail": "vcpkg.ports.tensorflow-common.generate_static_link_cmd_linux",
+        "documentation": {}
+    },
+    {
+        "label": "lib_suffix",
+        "kind": 5,
+        "importPath": "vcpkg.ports.tensorflow-common.generate_static_link_cmd_linux",
+        "description": "vcpkg.ports.tensorflow-common.generate_static_link_cmd_linux",
+        "peekOfCode": "lib_suffix = \"\" if len(sys.argv) < 5 else sys.argv[4]\nwith open(sys.argv[1], \"r\") as f_in:\n    with open(\"static_link.sh\", \"w\") as f_out:\n        p_cd = re.compile(r\"^\\((cd .*) && \\\\$\")\n        p_linker = re.compile(fr\"^\\s*(.+)gcc.+(@bazel-out\\S+libtensorflow{lib_suffix}\\.so\\.\\d+\\.\\d+\\.\\d+-2\\.params).*\")\n        f_out.write(\"#!/bin/bash\\n# note: ar/binutils version 2.27 required to support output files > 4GB\\n\")\n        env = []\n        for line in f_in:\n            if line.startswith(\"(cd\"):\n                # new command, reset",
+        "detail": "vcpkg.ports.tensorflow-common.generate_static_link_cmd_linux",
+        "documentation": {}
+    },
+    {
+        "label": "params_path",
+        "kind": 5,
+        "importPath": "vcpkg.ports.tensorflow-common.generate_static_link_cmd_macos",
+        "description": "vcpkg.ports.tensorflow-common.generate_static_link_cmd_macos",
+        "peekOfCode": "params_path = sys.argv[2]\nversion = sys.argv[3]\nlib_suffix = \"\" if len(sys.argv) < 5 else sys.argv[4]\nwith open(sys.argv[1], \"r\") as f_in:\n    with open(\"static_link.sh\", \"w\") as f_out:\n        if os.path.isfile(f\"{params_path}/libtensorflow_framework.{version}.dylib-2.params\"):\n            p_cd = re.compile(r\"^\\((cd .*) && \\\\$\")\n            p_linker = re.compile(fr\"^\\s*.+cc_wrapper.sh.+(@bazel-out\\S+libtensorflow{lib_suffix}\\.\\d+\\.\\d+\\.\\d+\\.dylib-2\\.params).*\")\n            f_out.write(\"#!/bin/bash\\n# note: ar/binutils version 2.27 required to support output files > 4GB\\n\")\n            env = []",
+        "detail": "vcpkg.ports.tensorflow-common.generate_static_link_cmd_macos",
+        "documentation": {}
+    },
+    {
+        "label": "version",
+        "kind": 5,
+        "importPath": "vcpkg.ports.tensorflow-common.generate_static_link_cmd_macos",
+        "description": "vcpkg.ports.tensorflow-common.generate_static_link_cmd_macos",
+        "peekOfCode": "version = sys.argv[3]\nlib_suffix = \"\" if len(sys.argv) < 5 else sys.argv[4]\nwith open(sys.argv[1], \"r\") as f_in:\n    with open(\"static_link.sh\", \"w\") as f_out:\n        if os.path.isfile(f\"{params_path}/libtensorflow_framework.{version}.dylib-2.params\"):\n            p_cd = re.compile(r\"^\\((cd .*) && \\\\$\")\n            p_linker = re.compile(fr\"^\\s*.+cc_wrapper.sh.+(@bazel-out\\S+libtensorflow{lib_suffix}\\.\\d+\\.\\d+\\.\\d+\\.dylib-2\\.params).*\")\n            f_out.write(\"#!/bin/bash\\n# note: ar/binutils version 2.27 required to support output files > 4GB\\n\")\n            env = []\n            for line in f_in:",
+        "detail": "vcpkg.ports.tensorflow-common.generate_static_link_cmd_macos",
+        "documentation": {}
+    },
+    {
+        "label": "lib_suffix",
+        "kind": 5,
+        "importPath": "vcpkg.ports.tensorflow-common.generate_static_link_cmd_macos",
+        "description": "vcpkg.ports.tensorflow-common.generate_static_link_cmd_macos",
+        "peekOfCode": "lib_suffix = \"\" if len(sys.argv) < 5 else sys.argv[4]\nwith open(sys.argv[1], \"r\") as f_in:\n    with open(\"static_link.sh\", \"w\") as f_out:\n        if os.path.isfile(f\"{params_path}/libtensorflow_framework.{version}.dylib-2.params\"):\n            p_cd = re.compile(r\"^\\((cd .*) && \\\\$\")\n            p_linker = re.compile(fr\"^\\s*.+cc_wrapper.sh.+(@bazel-out\\S+libtensorflow{lib_suffix}\\.\\d+\\.\\d+\\.\\d+\\.dylib-2\\.params).*\")\n            f_out.write(\"#!/bin/bash\\n# note: ar/binutils version 2.27 required to support output files > 4GB\\n\")\n            env = []\n            for line in f_in:\n                if line.startswith(\"(cd\"):",
+        "detail": "vcpkg.ports.tensorflow-common.generate_static_link_cmd_macos",
+        "documentation": {}
+    },
+    {
+        "label": "params_path",
+        "kind": 5,
+        "importPath": "vcpkg.ports.tensorflow-common.generate_static_link_cmd_windows",
+        "description": "vcpkg.ports.tensorflow-common.generate_static_link_cmd_windows",
+        "peekOfCode": "params_path = sys.argv[2]\nversion = sys.argv[3]\nlib_suffix = \"\" if len(sys.argv) < 5 else sys.argv[4]\nwith open(sys.argv[1], \"r\") as f_in:\n    with open(\"static_link.bat\", \"w\") as f_out:\n        p_setenv = re.compile(r\"^\\s*(SET .+=.*)$\")\n        p_linker = re.compile(fr\".+link\\.exe.+tensorflow{lib_suffix}\\.dll-2\\.params.*\")\n        env = []\n        for line in f_in:\n            if line.startswith(\"cd\"):",
+        "detail": "vcpkg.ports.tensorflow-common.generate_static_link_cmd_windows",
+        "documentation": {}
+    },
+    {
+        "label": "version",
+        "kind": 5,
+        "importPath": "vcpkg.ports.tensorflow-common.generate_static_link_cmd_windows",
+        "description": "vcpkg.ports.tensorflow-common.generate_static_link_cmd_windows",
+        "peekOfCode": "version = sys.argv[3]\nlib_suffix = \"\" if len(sys.argv) < 5 else sys.argv[4]\nwith open(sys.argv[1], \"r\") as f_in:\n    with open(\"static_link.bat\", \"w\") as f_out:\n        p_setenv = re.compile(r\"^\\s*(SET .+=.*)$\")\n        p_linker = re.compile(fr\".+link\\.exe.+tensorflow{lib_suffix}\\.dll-2\\.params.*\")\n        env = []\n        for line in f_in:\n            if line.startswith(\"cd\"):\n                # new command, reset",
+        "detail": "vcpkg.ports.tensorflow-common.generate_static_link_cmd_windows",
+        "documentation": {}
+    },
+    {
+        "label": "lib_suffix",
+        "kind": 5,
+        "importPath": "vcpkg.ports.tensorflow-common.generate_static_link_cmd_windows",
+        "description": "vcpkg.ports.tensorflow-common.generate_static_link_cmd_windows",
+        "peekOfCode": "lib_suffix = \"\" if len(sys.argv) < 5 else sys.argv[4]\nwith open(sys.argv[1], \"r\") as f_in:\n    with open(\"static_link.bat\", \"w\") as f_out:\n        p_setenv = re.compile(r\"^\\s*(SET .+=.*)$\")\n        p_linker = re.compile(fr\".+link\\.exe.+tensorflow{lib_suffix}\\.dll-2\\.params.*\")\n        env = []\n        for line in f_in:\n            if line.startswith(\"cd\"):\n                # new command, reset\n                env = []",
+        "detail": "vcpkg.ports.tensorflow-common.generate_static_link_cmd_windows",
+        "documentation": {}
+    },
+    {
+        "label": "GlobalConfig",
+        "kind": 6,
+        "importPath": "vcpkg.scripts.buildsystems.osx.applocal",
+        "description": "vcpkg.scripts.buildsystems.osx.applocal",
+        "peekOfCode": "class GlobalConfig(object):\n    logger = None\n    qtpath = None\n    exepath = None\ndef run_and_get_output(popen_args):\n    \"\"\"Run process and get all output\"\"\"\n    process_output = namedtuple('ProcessOutput', ['stdout', 'stderr', 'retcode'])\n    try:\n        GlobalConfig.logger.debug('run_and_get_output({0})'.format(repr(popen_args)))\n        proc = Popen(popen_args, stdin=PIPE, stdout=PIPE, stderr=PIPE)",
+        "detail": "vcpkg.scripts.buildsystems.osx.applocal",
+        "documentation": {}
+    },
+    {
+        "label": "run_and_get_output",
+        "kind": 2,
+        "importPath": "vcpkg.scripts.buildsystems.osx.applocal",
+        "description": "vcpkg.scripts.buildsystems.osx.applocal",
+        "peekOfCode": "def run_and_get_output(popen_args):\n    \"\"\"Run process and get all output\"\"\"\n    process_output = namedtuple('ProcessOutput', ['stdout', 'stderr', 'retcode'])\n    try:\n        GlobalConfig.logger.debug('run_and_get_output({0})'.format(repr(popen_args)))\n        proc = Popen(popen_args, stdin=PIPE, stdout=PIPE, stderr=PIPE)\n        stdout, stderr = proc.communicate(b'')\n        proc_out = process_output(stdout, stderr, proc.returncode)\n        GlobalConfig.logger.debug('\\tprocess_output: {0}'.format(proc_out))\n        return proc_out",
+        "detail": "vcpkg.scripts.buildsystems.osx.applocal",
+        "documentation": {}
+    },
+    {
+        "label": "get_dependencies",
+        "kind": 2,
+        "importPath": "vcpkg.scripts.buildsystems.osx.applocal",
+        "description": "vcpkg.scripts.buildsystems.osx.applocal",
+        "peekOfCode": "def get_dependencies(filename):\n    \"\"\"\n    input: filename must be an absolute path\n    Should call `otool` and returns the list of dependencies, unsorted,\n    unmodified, just the raw list so then we could eventually re-use in other\n    more specialized functions\n    \"\"\"\n    GlobalConfig.logger.debug('get_dependencies({0})'.format(filename))\n    popen_args = ['otool', '-L', filename]\n    proc_out = run_and_get_output(popen_args)",
+        "detail": "vcpkg.scripts.buildsystems.osx.applocal",
+        "documentation": {}
+    },
+    {
+        "label": "is_qt_plugin",
+        "kind": 2,
+        "importPath": "vcpkg.scripts.buildsystems.osx.applocal",
+        "description": "vcpkg.scripts.buildsystems.osx.applocal",
+        "peekOfCode": "def is_qt_plugin(filename):\n    \"\"\"\n    Checks if a given file is a qt plugin.\n    Accepts absolute path as well as path containing @executable_path\n    \"\"\"\n    qtlib_name_rgx = re.compile(QTPLUGIN_NAME_REGEX)\n    return qtlib_name_rgx.match(filename) is not None\ndef is_qt_lib(filename):\n    \"\"\"\n    Checks if a given file is a qt library.",
+        "detail": "vcpkg.scripts.buildsystems.osx.applocal",
+        "documentation": {}
+    },
+    {
+        "label": "is_qt_lib",
+        "kind": 2,
+        "importPath": "vcpkg.scripts.buildsystems.osx.applocal",
+        "description": "vcpkg.scripts.buildsystems.osx.applocal",
+        "peekOfCode": "def is_qt_lib(filename):\n    \"\"\"\n    Checks if a given file is a qt library.\n    Accepts absolute path as well as path containing @executable_path\n    \"\"\"\n    qtlib_name_rgx = re.compile(QTLIB_NAME_REGEX)\n    return qtlib_name_rgx.match(filename) is not None\ndef is_loader_path_lib(filename):\n    \"\"\"\n    Checks if a given file is loaded via @loader_path or @rpath",
+        "detail": "vcpkg.scripts.buildsystems.osx.applocal",
+        "documentation": {}
+    },
+    {
+        "label": "is_loader_path_lib",
+        "kind": 2,
+        "importPath": "vcpkg.scripts.buildsystems.osx.applocal",
+        "description": "vcpkg.scripts.buildsystems.osx.applocal",
+        "peekOfCode": "def is_loader_path_lib(filename):\n    \"\"\"\n    Checks if a given file is loaded via @loader_path or @rpath\n    \"\"\"\n    qtlib_name_rgx = re.compile(LOADERPATH_REGEX)\n    return qtlib_name_rgx.match(filename) is not None\ndef normalize_qtplugin_name(filename):\n    \"\"\"\n    input: a path to a qt plugin, as returned by otool, that can have this form :\n            - an absolute path /../plugins/PLUGINTYPE/PLUGINNAME.dylib",
+        "detail": "vcpkg.scripts.buildsystems.osx.applocal",
+        "documentation": {}
+    },
+    {
+        "label": "normalize_qtplugin_name",
+        "kind": 2,
+        "importPath": "vcpkg.scripts.buildsystems.osx.applocal",
+        "description": "vcpkg.scripts.buildsystems.osx.applocal",
+        "peekOfCode": "def normalize_qtplugin_name(filename):\n    \"\"\"\n    input: a path to a qt plugin, as returned by otool, that can have this form :\n            - an absolute path /../plugins/PLUGINTYPE/PLUGINNAME.dylib\n            - @executable_path/../plugins/PLUGINTYPE/PLUGINNAME.dylib\n    output:\n        a tuple (qtlib, abspath, rpath) where:\n            - qtname is the name of the plugin (libqcocoa.dylib, etc.)\n            - abspath is the absolute path of the qt lib inside the app bundle of exepath\n            - relpath is the correct rpath to a qt lib inside the app bundle",
+        "detail": "vcpkg.scripts.buildsystems.osx.applocal",
+        "documentation": {}
+    },
+    {
+        "label": "normalize_qtlib_name",
+        "kind": 2,
+        "importPath": "vcpkg.scripts.buildsystems.osx.applocal",
+        "description": "vcpkg.scripts.buildsystems.osx.applocal",
+        "peekOfCode": "def normalize_qtlib_name(filename):\n    \"\"\"\n    input: a path to a qt library, as returned by otool, that can have this form :\n            - an absolute path /lib/xxx/yyy\n            - @executable_path/../Frameworks/QtSerialPort.framework/Versions/5/QtSerialPort\n    output:\n        a tuple (qtlib, abspath, rpath) where:\n            - qtlib is the name of the qtlib (QtCore, QtWidgets, etc.)\n            - abspath is the absolute path of the qt lib inside the app bundle of exepath\n            - relpath is the correct rpath to a qt lib inside the app bundle",
+        "detail": "vcpkg.scripts.buildsystems.osx.applocal",
+        "documentation": {}
+    },
+    {
+        "label": "normalize_loaderpath_name",
+        "kind": 2,
+        "importPath": "vcpkg.scripts.buildsystems.osx.applocal",
+        "description": "vcpkg.scripts.buildsystems.osx.applocal",
+        "peekOfCode": "def normalize_loaderpath_name(filename):\n    \"\"\"\n    input: a path to a loaderpath library, as returned by otool, that can have this form :\n            - an relative path @loaderpath/yyy\n    output:\n        a tuple (loaderpathlib, abspath, rpath) where:\n            - loaderpathlib is the name of the loaderpath lib\n            - abspath is the absolute path of the qt lib inside the app bundle of exepath\n            - relpath is the correct rpath to a qt lib inside the app bundle\n    \"\"\"",
+        "detail": "vcpkg.scripts.buildsystems.osx.applocal",
+        "documentation": {}
+    },
+    {
+        "label": "fix_dependency",
+        "kind": 2,
+        "importPath": "vcpkg.scripts.buildsystems.osx.applocal",
+        "description": "vcpkg.scripts.buildsystems.osx.applocal",
+        "peekOfCode": "def fix_dependency(binary, dep):\n    \"\"\"\n    fix 'dep' dependency of 'binary'. 'dep' is a qt library\n    \"\"\"\n    if is_qt_lib(dep):\n        qtname, dep_abspath, dep_rpath = normalize_qtlib_name(dep)\n        qtnamesrc = os.path.join(GlobalConfig.qtpath, 'lib', '{0}.framework'.\n                                 format(qtname), qtname)\n    elif is_qt_plugin(dep):\n        qtname, dep_abspath, dep_rpath = normalize_qtplugin_name(dep)",
+        "detail": "vcpkg.scripts.buildsystems.osx.applocal",
+        "documentation": {}
+    },
+    {
+        "label": "fix_binary",
+        "kind": 2,
+        "importPath": "vcpkg.scripts.buildsystems.osx.applocal",
+        "description": "vcpkg.scripts.buildsystems.osx.applocal",
+        "peekOfCode": "def fix_binary(binary):\n    \"\"\"\n        input:\n          binary: relative or absolute path (no @executable_path syntax)\n        process:\n        - first fix the rpath for the qt libs on which 'binary' depend\n        - copy into the bundle of exepath the eventual libraries that are missing\n        - (create the soft links) needed ?\n        - do the same for all qt dependencies of binary (recursive)\n    \"\"\"",
+        "detail": "vcpkg.scripts.buildsystems.osx.applocal",
+        "documentation": {}
+    },
+    {
+        "label": "fix_main_binaries",
+        "kind": 2,
+        "importPath": "vcpkg.scripts.buildsystems.osx.applocal",
+        "description": "vcpkg.scripts.buildsystems.osx.applocal",
+        "peekOfCode": "def fix_main_binaries():\n    \"\"\"\n        list the main binaries of the app bundle and fix them\n    \"\"\"\n    # deduce bundle path\n    bundlepath = os.path.sep.join(GlobalConfig.exepath.split(os.path.sep)[0:-3])\n    # fix main binary\n    GlobalConfig.logger.info('fixing executable \\'{0}\\''.format(GlobalConfig.exepath))\n    if fix_binary(GlobalConfig.exepath):\n        GlobalConfig.logger.info('fixing plugins')",
+        "detail": "vcpkg.scripts.buildsystems.osx.applocal",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "vcpkg.scripts.buildsystems.osx.applocal",
+        "description": "vcpkg.scripts.buildsystems.osx.applocal",
+        "peekOfCode": "def main():\n    descr = \"\"\"finish the job started by macdeployqt!\n - find dependencies/rpaths with otool\n - copy missed dependencies with cp and mkdir\n - fix missed rpaths        with install_name_tool\n exit codes:\n - 0 : success\n - 1 : error\n \"\"\"\n    parser = argparse.ArgumentParser(description=descr,",
+        "detail": "vcpkg.scripts.buildsystems.osx.applocal",
+        "documentation": {}
+    },
+    {
+        "label": "QTLIB_NAME_REGEX",
+        "kind": 5,
+        "importPath": "vcpkg.scripts.buildsystems.osx.applocal",
+        "description": "vcpkg.scripts.buildsystems.osx.applocal",
+        "peekOfCode": "QTLIB_NAME_REGEX = r'^(?:@executable_path)?/.*/(Qt[a-zA-Z]*).framework/(?:Versions/\\d/)?\\1$'\nQTLIB_NORMALIZED = r'$prefix/Frameworks/$qtlib.framework/Versions/$qtversion/$qtlib'\nQTPLUGIN_NAME_REGEX = r'^(?:@executable_path)?/.*/[pP]lug[iI]ns/(.*)/(.*).dylib$'\nQTPLUGIN_NORMALIZED = r'$prefix/PlugIns/$plugintype/$pluginname.dylib'\nLOADERPATH_REGEX = r'^@[a-z_]+path/(.*)'\nLOADERPATH_NORMALIZED = r'$prefix/Frameworks/$loaderpathlib'\nclass GlobalConfig(object):\n    logger = None\n    qtpath = None\n    exepath = None",
+        "detail": "vcpkg.scripts.buildsystems.osx.applocal",
+        "documentation": {}
+    },
+    {
+        "label": "QTLIB_NORMALIZED",
+        "kind": 5,
+        "importPath": "vcpkg.scripts.buildsystems.osx.applocal",
+        "description": "vcpkg.scripts.buildsystems.osx.applocal",
+        "peekOfCode": "QTLIB_NORMALIZED = r'$prefix/Frameworks/$qtlib.framework/Versions/$qtversion/$qtlib'\nQTPLUGIN_NAME_REGEX = r'^(?:@executable_path)?/.*/[pP]lug[iI]ns/(.*)/(.*).dylib$'\nQTPLUGIN_NORMALIZED = r'$prefix/PlugIns/$plugintype/$pluginname.dylib'\nLOADERPATH_REGEX = r'^@[a-z_]+path/(.*)'\nLOADERPATH_NORMALIZED = r'$prefix/Frameworks/$loaderpathlib'\nclass GlobalConfig(object):\n    logger = None\n    qtpath = None\n    exepath = None\ndef run_and_get_output(popen_args):",
+        "detail": "vcpkg.scripts.buildsystems.osx.applocal",
+        "documentation": {}
+    },
+    {
+        "label": "QTPLUGIN_NAME_REGEX",
+        "kind": 5,
+        "importPath": "vcpkg.scripts.buildsystems.osx.applocal",
+        "description": "vcpkg.scripts.buildsystems.osx.applocal",
+        "peekOfCode": "QTPLUGIN_NAME_REGEX = r'^(?:@executable_path)?/.*/[pP]lug[iI]ns/(.*)/(.*).dylib$'\nQTPLUGIN_NORMALIZED = r'$prefix/PlugIns/$plugintype/$pluginname.dylib'\nLOADERPATH_REGEX = r'^@[a-z_]+path/(.*)'\nLOADERPATH_NORMALIZED = r'$prefix/Frameworks/$loaderpathlib'\nclass GlobalConfig(object):\n    logger = None\n    qtpath = None\n    exepath = None\ndef run_and_get_output(popen_args):\n    \"\"\"Run process and get all output\"\"\"",
+        "detail": "vcpkg.scripts.buildsystems.osx.applocal",
+        "documentation": {}
+    },
+    {
+        "label": "QTPLUGIN_NORMALIZED",
+        "kind": 5,
+        "importPath": "vcpkg.scripts.buildsystems.osx.applocal",
+        "description": "vcpkg.scripts.buildsystems.osx.applocal",
+        "peekOfCode": "QTPLUGIN_NORMALIZED = r'$prefix/PlugIns/$plugintype/$pluginname.dylib'\nLOADERPATH_REGEX = r'^@[a-z_]+path/(.*)'\nLOADERPATH_NORMALIZED = r'$prefix/Frameworks/$loaderpathlib'\nclass GlobalConfig(object):\n    logger = None\n    qtpath = None\n    exepath = None\ndef run_and_get_output(popen_args):\n    \"\"\"Run process and get all output\"\"\"\n    process_output = namedtuple('ProcessOutput', ['stdout', 'stderr', 'retcode'])",
+        "detail": "vcpkg.scripts.buildsystems.osx.applocal",
+        "documentation": {}
+    },
+    {
+        "label": "LOADERPATH_REGEX",
+        "kind": 5,
+        "importPath": "vcpkg.scripts.buildsystems.osx.applocal",
+        "description": "vcpkg.scripts.buildsystems.osx.applocal",
+        "peekOfCode": "LOADERPATH_REGEX = r'^@[a-z_]+path/(.*)'\nLOADERPATH_NORMALIZED = r'$prefix/Frameworks/$loaderpathlib'\nclass GlobalConfig(object):\n    logger = None\n    qtpath = None\n    exepath = None\ndef run_and_get_output(popen_args):\n    \"\"\"Run process and get all output\"\"\"\n    process_output = namedtuple('ProcessOutput', ['stdout', 'stderr', 'retcode'])\n    try:",
+        "detail": "vcpkg.scripts.buildsystems.osx.applocal",
+        "documentation": {}
+    },
+    {
+        "label": "LOADERPATH_NORMALIZED",
+        "kind": 5,
+        "importPath": "vcpkg.scripts.buildsystems.osx.applocal",
+        "description": "vcpkg.scripts.buildsystems.osx.applocal",
+        "peekOfCode": "LOADERPATH_NORMALIZED = r'$prefix/Frameworks/$loaderpathlib'\nclass GlobalConfig(object):\n    logger = None\n    qtpath = None\n    exepath = None\ndef run_and_get_output(popen_args):\n    \"\"\"Run process and get all output\"\"\"\n    process_output = namedtuple('ProcessOutput', ['stdout', 'stderr', 'retcode'])\n    try:\n        GlobalConfig.logger.debug('run_and_get_output({0})'.format(repr(popen_args)))",
+        "detail": "vcpkg.scripts.buildsystems.osx.applocal",
+        "documentation": {}
+    },
+    {
+        "label": "getFiles",
+        "kind": 2,
+        "importPath": "vcpkg.scripts.file_script",
+        "description": "vcpkg.scripts.file_script",
+        "peekOfCode": "def getFiles(path):\n    files = os.listdir(path)\n    return list(filter(lambda x: x[0] != '.', files))\ndef gen_all_file_strings(path, files, headers, output):\n    for file in files:\n        components = file.split(\"_\")\n        package = components[0] + \":\" + components[2].replace(\".list\", \"\")\n        f = open(path + file)\n        for line in f:\n            if line.strip()[-1] == \"/\":",
+        "detail": "vcpkg.scripts.file_script",
+        "documentation": {}
+    },
+    {
+        "label": "gen_all_file_strings",
+        "kind": 2,
+        "importPath": "vcpkg.scripts.file_script",
+        "description": "vcpkg.scripts.file_script",
+        "peekOfCode": "def gen_all_file_strings(path, files, headers, output):\n    for file in files:\n        components = file.split(\"_\")\n        package = components[0] + \":\" + components[2].replace(\".list\", \"\")\n        f = open(path + file)\n        for line in f:\n            if line.strip()[-1] == \"/\":\n                continue\n            filepath = line[line.find(\"/\"):]\n            output.write(package + \":\" + filepath)",
+        "detail": "vcpkg.scripts.file_script",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "vcpkg.scripts.file_script",
+        "description": "vcpkg.scripts.file_script",
+        "peekOfCode": "def main(path):\n    try:\n        os.mkdir(\"scripts/list_files\")\n    except FileExistsError:\n        print(\"Path already exists, continuing...\")\n    try:\n        headers = open(\"scripts/list_files/VCPKGHeadersDatabase.txt\", mode='w')\n        output = open(\"scripts/list_files/VCPKGDatabase.txt\", mode='w')\n        gen_all_file_strings(path, getFiles(path), headers, output)\n        headers.close()",
+        "detail": "vcpkg.scripts.file_script",
+        "documentation": {}
+    },
+    {
+        "label": "keyword",
+        "kind": 5,
+        "importPath": "vcpkg.scripts.file_script",
+        "description": "vcpkg.scripts.file_script",
+        "peekOfCode": "keyword = \"/include/\"\ndef getFiles(path):\n    files = os.listdir(path)\n    return list(filter(lambda x: x[0] != '.', files))\ndef gen_all_file_strings(path, files, headers, output):\n    for file in files:\n        components = file.split(\"_\")\n        package = components[0] + \":\" + components[2].replace(\".list\", \"\")\n        f = open(path + file)\n        for line in f:",
+        "detail": "vcpkg.scripts.file_script",
+        "documentation": {}
+    },
+    {
+        "label": "get_version_tag",
+        "kind": 2,
+        "importPath": "vcpkg.scripts.generateBaseline",
+        "description": "vcpkg.scripts.generateBaseline",
+        "peekOfCode": "def get_version_tag(version):\n    if 'version' in version:\n        return version['version']\n    elif 'version-date' in version:\n        return version['version-date']\n    elif 'version-semver' in version:\n        return version['version-semver']\n    elif 'version-string' in version:\n        return version['version-string']\n    sys.exit(1)",
+        "detail": "vcpkg.scripts.generateBaseline",
+        "documentation": {}
+    },
+    {
+        "label": "get_version_port_version",
+        "kind": 2,
+        "importPath": "vcpkg.scripts.generateBaseline",
+        "description": "vcpkg.scripts.generateBaseline",
+        "peekOfCode": "def get_version_port_version(version):\n    if 'port-version' in version:\n        return version['port-version']\n    return 0\ndef generate_baseline():\n    start_time = time.time()\n    # Assume each directory in ${VCPKG_ROOT}/ports is a different port\n    port_names = [item for item in os.listdir(\n        PORTS_DIRECTORY) if os.path.isdir(os.path.join(PORTS_DIRECTORY, item))]\n    port_names.sort()",
+        "detail": "vcpkg.scripts.generateBaseline",
+        "documentation": {}
+    },
+    {
+        "label": "generate_baseline",
+        "kind": 2,
+        "importPath": "vcpkg.scripts.generateBaseline",
+        "description": "vcpkg.scripts.generateBaseline",
+        "peekOfCode": "def generate_baseline():\n    start_time = time.time()\n    # Assume each directory in ${VCPKG_ROOT}/ports is a different port\n    port_names = [item for item in os.listdir(\n        PORTS_DIRECTORY) if os.path.isdir(os.path.join(PORTS_DIRECTORY, item))]\n    port_names.sort()\n    baseline_entries = {}\n    total_count = len(port_names)\n    for i, port_name in enumerate(port_names, 1):\n        port_file_path = os.path.join(",
+        "detail": "vcpkg.scripts.generateBaseline",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "vcpkg.scripts.generateBaseline",
+        "description": "vcpkg.scripts.generateBaseline",
+        "peekOfCode": "def main():\n    if not os.path.exists(VERSIONS_DB_DIRECTORY):\n        print(f'Version DB files must exist before generating a baseline.\\nRun: `python generatePortVersionsDB`\\n')\n    generate_baseline()\nif __name__ == \"__main__\":\n    main()",
+        "detail": "vcpkg.scripts.generateBaseline",
+        "documentation": {}
+    },
+    {
+        "label": "SCRIPT_DIRECTORY",
+        "kind": 5,
+        "importPath": "vcpkg.scripts.generateBaseline",
+        "description": "vcpkg.scripts.generateBaseline",
+        "peekOfCode": "SCRIPT_DIRECTORY = os.path.dirname(os.path.abspath(__file__))\nPORTS_DIRECTORY = os.path.join(SCRIPT_DIRECTORY, '../ports')\nVERSIONS_DB_DIRECTORY = os.path.join(SCRIPT_DIRECTORY, '../versions')\ndef get_version_tag(version):\n    if 'version' in version:\n        return version['version']\n    elif 'version-date' in version:\n        return version['version-date']\n    elif 'version-semver' in version:\n        return version['version-semver']",
+        "detail": "vcpkg.scripts.generateBaseline",
+        "documentation": {}
+    },
+    {
+        "label": "PORTS_DIRECTORY",
+        "kind": 5,
+        "importPath": "vcpkg.scripts.generateBaseline",
+        "description": "vcpkg.scripts.generateBaseline",
+        "peekOfCode": "PORTS_DIRECTORY = os.path.join(SCRIPT_DIRECTORY, '../ports')\nVERSIONS_DB_DIRECTORY = os.path.join(SCRIPT_DIRECTORY, '../versions')\ndef get_version_tag(version):\n    if 'version' in version:\n        return version['version']\n    elif 'version-date' in version:\n        return version['version-date']\n    elif 'version-semver' in version:\n        return version['version-semver']\n    elif 'version-string' in version:",
+        "detail": "vcpkg.scripts.generateBaseline",
+        "documentation": {}
+    },
+    {
+        "label": "VERSIONS_DB_DIRECTORY",
+        "kind": 5,
+        "importPath": "vcpkg.scripts.generateBaseline",
+        "description": "vcpkg.scripts.generateBaseline",
+        "peekOfCode": "VERSIONS_DB_DIRECTORY = os.path.join(SCRIPT_DIRECTORY, '../versions')\ndef get_version_tag(version):\n    if 'version' in version:\n        return version['version']\n    elif 'version-date' in version:\n        return version['version-date']\n    elif 'version-semver' in version:\n        return version['version-semver']\n    elif 'version-string' in version:\n        return version['version-string']",
+        "detail": "vcpkg.scripts.generateBaseline",
+        "documentation": {}
+    },
+    {
+        "label": "get_current_git_ref",
+        "kind": 2,
+        "importPath": "vcpkg.scripts.generatePortVersionsDb",
+        "description": "vcpkg.scripts.generatePortVersionsDb",
+        "peekOfCode": "def get_current_git_ref():\n    output = subprocess.run(['git', '-C', SCRIPT_DIRECTORY, 'rev-parse', '--verify', 'HEAD'],\n                            capture_output=True,\n                            encoding='utf-8')\n    if output.returncode == 0:\n        return output.stdout.strip()\n    print(f\"Failed to get git ref:\", output.stderr.strip(), file=sys.stderr)\n    return None\ndef generate_versions_file(port_name):\n    containing_dir = os.path.join(VERSIONS_DB_DIRECTORY, f'{port_name[0]}-')",
+        "detail": "vcpkg.scripts.generatePortVersionsDb",
+        "documentation": {}
+    },
+    {
+        "label": "generate_versions_file",
+        "kind": 2,
+        "importPath": "vcpkg.scripts.generatePortVersionsDb",
+        "description": "vcpkg.scripts.generatePortVersionsDb",
+        "peekOfCode": "def generate_versions_file(port_name):\n    containing_dir = os.path.join(VERSIONS_DB_DIRECTORY, f'{port_name[0]}-')\n    os.makedirs(containing_dir, exist_ok=True)\n    output_file_path = os.path.join(containing_dir, f'{port_name}.json')\n    if not os.path.exists(output_file_path):\n        env = os.environ.copy()\n        env['GIT_OPTIONAL_LOCKS'] = '0'\n        output = subprocess.run(\n            [os.path.join(SCRIPT_DIRECTORY, '../vcpkg'),\n             'x-history', port_name, '--x-json', f'--output={output_file_path}'],",
+        "detail": "vcpkg.scripts.generatePortVersionsDb",
+        "documentation": {}
+    },
+    {
+        "label": "generate_versions_db",
+        "kind": 2,
+        "importPath": "vcpkg.scripts.generatePortVersionsDb",
+        "description": "vcpkg.scripts.generatePortVersionsDb",
+        "peekOfCode": "def generate_versions_db(revision):\n    start_time = time.time()\n    # Assume each directory in ${VCPKG_ROOT}/ports is a different port\n    port_names = [item for item in os.listdir(\n        PORTS_DIRECTORY) if os.path.isdir(os.path.join(PORTS_DIRECTORY, item))]\n    total_count = len(port_names)\n    concurrency = MAX_PROCESSES / 2\n    print(f'Running {concurrency:.0f} parallel processes')\n    process_pool = multiprocessing.Pool(MAX_PROCESSES)\n    for i, _ in enumerate(process_pool.imap_unordered(generate_versions_file, port_names), 1):",
+        "detail": "vcpkg.scripts.generatePortVersionsDb",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "vcpkg.scripts.generatePortVersionsDb",
+        "description": "vcpkg.scripts.generatePortVersionsDb",
+        "peekOfCode": "def main():\n    revision = get_current_git_ref()\n    if not revision:\n        print('Couldn\\'t fetch current Git revision', file=sys.stderr)\n        sys.exit(1)\n    rev_file = os.path.join(VERSIONS_DB_DIRECTORY, revision)\n    if os.path.exists(rev_file):\n        print(f'Database files already exist for commit {revision}')\n        sys.exit(0)\n    generate_versions_db(revision)",
+        "detail": "vcpkg.scripts.generatePortVersionsDb",
+        "documentation": {}
+    },
+    {
+        "label": "MAX_PROCESSES",
+        "kind": 5,
+        "importPath": "vcpkg.scripts.generatePortVersionsDb",
+        "description": "vcpkg.scripts.generatePortVersionsDb",
+        "peekOfCode": "MAX_PROCESSES = multiprocessing.cpu_count()\nSCRIPT_DIRECTORY = os.path.dirname(os.path.abspath(__file__))\nPORTS_DIRECTORY = os.path.join(SCRIPT_DIRECTORY, '../ports')\nVERSIONS_DB_DIRECTORY = os.path.join(SCRIPT_DIRECTORY, '../versions')\ndef get_current_git_ref():\n    output = subprocess.run(['git', '-C', SCRIPT_DIRECTORY, 'rev-parse', '--verify', 'HEAD'],\n                            capture_output=True,\n                            encoding='utf-8')\n    if output.returncode == 0:\n        return output.stdout.strip()",
+        "detail": "vcpkg.scripts.generatePortVersionsDb",
+        "documentation": {}
+    },
+    {
+        "label": "SCRIPT_DIRECTORY",
+        "kind": 5,
+        "importPath": "vcpkg.scripts.generatePortVersionsDb",
+        "description": "vcpkg.scripts.generatePortVersionsDb",
+        "peekOfCode": "SCRIPT_DIRECTORY = os.path.dirname(os.path.abspath(__file__))\nPORTS_DIRECTORY = os.path.join(SCRIPT_DIRECTORY, '../ports')\nVERSIONS_DB_DIRECTORY = os.path.join(SCRIPT_DIRECTORY, '../versions')\ndef get_current_git_ref():\n    output = subprocess.run(['git', '-C', SCRIPT_DIRECTORY, 'rev-parse', '--verify', 'HEAD'],\n                            capture_output=True,\n                            encoding='utf-8')\n    if output.returncode == 0:\n        return output.stdout.strip()\n    print(f\"Failed to get git ref:\", output.stderr.strip(), file=sys.stderr)",
+        "detail": "vcpkg.scripts.generatePortVersionsDb",
+        "documentation": {}
+    },
+    {
+        "label": "PORTS_DIRECTORY",
+        "kind": 5,
+        "importPath": "vcpkg.scripts.generatePortVersionsDb",
+        "description": "vcpkg.scripts.generatePortVersionsDb",
+        "peekOfCode": "PORTS_DIRECTORY = os.path.join(SCRIPT_DIRECTORY, '../ports')\nVERSIONS_DB_DIRECTORY = os.path.join(SCRIPT_DIRECTORY, '../versions')\ndef get_current_git_ref():\n    output = subprocess.run(['git', '-C', SCRIPT_DIRECTORY, 'rev-parse', '--verify', 'HEAD'],\n                            capture_output=True,\n                            encoding='utf-8')\n    if output.returncode == 0:\n        return output.stdout.strip()\n    print(f\"Failed to get git ref:\", output.stderr.strip(), file=sys.stderr)\n    return None",
+        "detail": "vcpkg.scripts.generatePortVersionsDb",
+        "documentation": {}
+    },
+    {
+        "label": "VERSIONS_DB_DIRECTORY",
+        "kind": 5,
+        "importPath": "vcpkg.scripts.generatePortVersionsDb",
+        "description": "vcpkg.scripts.generatePortVersionsDb",
+        "peekOfCode": "VERSIONS_DB_DIRECTORY = os.path.join(SCRIPT_DIRECTORY, '../versions')\ndef get_current_git_ref():\n    output = subprocess.run(['git', '-C', SCRIPT_DIRECTORY, 'rev-parse', '--verify', 'HEAD'],\n                            capture_output=True,\n                            encoding='utf-8')\n    if output.returncode == 0:\n        return output.stdout.strip()\n    print(f\"Failed to get git ref:\", output.stderr.strip(), file=sys.stderr)\n    return None\ndef generate_versions_file(port_name):",
+        "detail": "vcpkg.scripts.generatePortVersionsDb",
+        "documentation": {}
+    },
+    {
+        "label": "download",
+        "kind": 2,
+        "importPath": "vcpkg.scripts.update_suitesparse",
+        "description": "vcpkg.scripts.update_suitesparse",
+        "peekOfCode": "def download(url):\n    print(f\"Downloading {url}...\")\n    r = requests.get(url)\n    r.raise_for_status()\n    return r.content\ndef sha512(data):\n    sha = hashlib.sha512()\n    sha.update(data)\n    return sha.hexdigest()\ndef extract_version(content):",
+        "detail": "vcpkg.scripts.update_suitesparse",
+        "documentation": {}
+    },
+    {
+        "label": "sha512",
+        "kind": 2,
+        "importPath": "vcpkg.scripts.update_suitesparse",
+        "description": "vcpkg.scripts.update_suitesparse",
+        "peekOfCode": "def sha512(data):\n    sha = hashlib.sha512()\n    sha.update(data)\n    return sha.hexdigest()\ndef extract_version(content):\n    major = re.search(r\"^set *\\( *(\\w+)_VERSION_MAJOR +(\\d+) \", content, re.M).group(2)\n    minor = re.search(r\"^set *\\( *(\\w+)_VERSION_MINOR +(\\d+) \", content, re.M).group(2)\n    sub = re.search(r\"^set *\\( *(\\w+)_VERSION_(?:SUB|PATCH|UPDATE) +(\\d+) \", content, re.M).group(2)\n    return f\"{major}.{minor}.{sub}\"\ndef load_versions(tar_gz_bytes):",
+        "detail": "vcpkg.scripts.update_suitesparse",
+        "documentation": {}
+    },
+    {
+        "label": "extract_version",
+        "kind": 2,
+        "importPath": "vcpkg.scripts.update_suitesparse",
+        "description": "vcpkg.scripts.update_suitesparse",
+        "peekOfCode": "def extract_version(content):\n    major = re.search(r\"^set *\\( *(\\w+)_VERSION_MAJOR +(\\d+) \", content, re.M).group(2)\n    minor = re.search(r\"^set *\\( *(\\w+)_VERSION_MINOR +(\\d+) \", content, re.M).group(2)\n    sub = re.search(r\"^set *\\( *(\\w+)_VERSION_(?:SUB|PATCH|UPDATE) +(\\d+) \", content, re.M).group(2)\n    return f\"{major}.{minor}.{sub}\"\ndef load_versions(tar_gz_bytes):\n    versions = {}\n    tar_gz_file = io.BytesIO(tar_gz_bytes)\n    with tarfile.open(fileobj=tar_gz_file, mode=\"r:gz\") as tar:\n        for member in tar.getmembers():",
+        "detail": "vcpkg.scripts.update_suitesparse",
+        "documentation": {}
+    },
+    {
+        "label": "load_versions",
+        "kind": 2,
+        "importPath": "vcpkg.scripts.update_suitesparse",
+        "description": "vcpkg.scripts.update_suitesparse",
+        "peekOfCode": "def load_versions(tar_gz_bytes):\n    versions = {}\n    tar_gz_file = io.BytesIO(tar_gz_bytes)\n    with tarfile.open(fileobj=tar_gz_file, mode=\"r:gz\") as tar:\n        for member in tar.getmembers():\n            if not member.isfile():\n                continue\n            if m := re.fullmatch(r\"SuiteSparse-[^/]+/(\\w+)/CMakeLists.txt\", member.name):\n                name = m.group(1)\n                if name in [\"Example\", \"GraphBLAS\", \"CSparse\"]:",
+        "detail": "vcpkg.scripts.update_suitesparse",
+        "documentation": {}
+    },
+    {
+        "label": "update_manifest",
+        "kind": 2,
+        "importPath": "vcpkg.scripts.update_suitesparse",
+        "description": "vcpkg.scripts.update_suitesparse",
+        "peekOfCode": "def update_manifest(pkg_name, version):\n    port_dir = ports_root / pkg_name\n    manifest_path = port_dir / \"vcpkg.json\"\n    manifest = json.loads(manifest_path.read_text(\"utf8\"))\n    if manifest[\"version-semver\"] == version:\n        return False\n    manifest[\"version-semver\"] = version\n    manifest_path.write_text(json.dumps(manifest, indent=2) + \"\\n\")\n    return True\ndef update_portfile(pkg_name, new_version, new_hash):",
+        "detail": "vcpkg.scripts.update_suitesparse",
+        "documentation": {}
+    },
+    {
+        "label": "update_portfile",
+        "kind": 2,
+        "importPath": "vcpkg.scripts.update_suitesparse",
+        "description": "vcpkg.scripts.update_suitesparse",
+        "peekOfCode": "def update_portfile(pkg_name, new_version, new_hash):\n    port_dir = ports_root / pkg_name\n    portfile_path = port_dir / \"portfile.cmake\"\n    content = portfile_path.read_text(\"utf8\")\n    content, n = re.subn(r\"\\bREF v\\S+\", f\"REF v{new_version}\", content, re.M)\n    if n != 1:\n        raise Exception(f\"Updating {pkg_name} portfile ref failed!\")\n    content, n = re.subn(r\"\\bSHA512 \\S+\", f\"SHA512 {new_hash}\", content, re.M)\n    if n != 1:\n        raise Exception(f\"Updating {pkg_name} portfile hash failed!\")",
+        "detail": "vcpkg.scripts.update_suitesparse",
+        "documentation": {}
+    },
+    {
+        "label": "update_port",
+        "kind": 2,
+        "importPath": "vcpkg.scripts.update_suitesparse",
+        "description": "vcpkg.scripts.update_suitesparse",
+        "peekOfCode": "def update_port(pkg_name, new_version, suitesparse_hash):\n    port_dir = ports_root / pkg_name\n    if not port_dir.exists():\n        raise Exception(f\"'{pkg_name}' does not exist!\")\n    update_manifest(pkg_name, new_version)\n    # Always update the tag in vcpkg_from_github() even if version has not changed\n    # to avoid having to download multiple versions of the source archive.\n    print(f\"{pkg_name}: updating...\")\n    if pkg_name == \"suitesparse-graphblas\":\n        url = f\"https://github.com/DrTimothyAldenDavis/GraphBLAS/archive/refs/tags/v{new_version}.tar.gz\"",
+        "detail": "vcpkg.scripts.update_suitesparse",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "vcpkg.scripts.update_suitesparse",
+        "description": "vcpkg.scripts.update_suitesparse",
+        "peekOfCode": "def main(suitesparse_version):\n    suitesparse_url = (\n        f\"https://github.com/DrTimothyAldenDavis/SuiteSparse/archive/refs/tags/v{suitesparse_version}.tar.gz\"\n    )\n    tar_gz_bytes = download(suitesparse_url)\n    suitesparse_hash = sha512(tar_gz_bytes)\n    print(\"Reading versions from CMakeLists.txt files...\")\n    versions = load_versions(tar_gz_bytes)\n    for lib, new_version in versions.items():\n        pkg_name = \"suitesparse-config\" if lib == \"SuiteSparse_config\" else \"suitesparse-\" + lib.lower()",
+        "detail": "vcpkg.scripts.update_suitesparse",
+        "documentation": {}
+    },
+    {
+        "label": "ports_root",
+        "kind": 5,
+        "importPath": "vcpkg.scripts.update_suitesparse",
+        "description": "vcpkg.scripts.update_suitesparse",
+        "peekOfCode": "ports_root = Path(__file__).resolve().parent.parent / \"ports\"\ndef download(url):\n    print(f\"Downloading {url}...\")\n    r = requests.get(url)\n    r.raise_for_status()\n    return r.content\ndef sha512(data):\n    sha = hashlib.sha512()\n    sha.update(data)\n    return sha.hexdigest()",
+        "detail": "vcpkg.scripts.update_suitesparse",
+        "documentation": {}
+    }
+]
